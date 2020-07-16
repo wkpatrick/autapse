@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "autapse-backend", "autapse-backend\autapse-backend.csproj", "{171ABE51-40E6-4D56-B325-F27B52C8B656}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{171ABE51-40E6-4D56-B325-F27B52C8B656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171ABE51-40E6-4D56-B325-F27B52C8B656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171ABE51-40E6-4D56-B325-F27B52C8B656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171ABE51-40E6-4D56-B325-F27B52C8B656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
