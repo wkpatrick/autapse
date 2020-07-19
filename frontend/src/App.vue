@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
     import TorrentTable from "@/components/TorrentTable";
 
     export default {
@@ -26,9 +25,11 @@
         -moz-osx-font-smoothing: grayscale;
         color: #2c3e50;
     }
+
     html {
         overflow-y: auto !important;
     }
+
     select {
         overflow-y: auto !important;
     }

@@ -231,7 +231,6 @@
                                 break;
                             case "file":
                                 if (this.torrents[resource.torrent_id]) {
-                                    // eslint-disable-next-line no-empty
                                     if (!this.torrents[resource.torrent_id].torrent_files) {
                                         this.$set(this.torrents[resource.torrent_id], 'torrent_files', {});
                                     }
@@ -454,7 +453,7 @@
                         })
                         trackerFilterRetVal = retVal;
                     }
-                    return stateFilterRetVal || trackerFilterRetVal;
+                    return stateFilterRetVal && trackerFilterRetVal;
                 })
                 return vals;
             },
