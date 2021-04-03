@@ -141,9 +141,20 @@ export default {
     }
   },
   created() {
-    this.$options.sockets.onopen = () => this.createInitialFilters();
-    // Listen for messages
-    this.$options.sockets.onmessage = (data) => this.parseMessage(JSON.parse(data.data));
+    //check for valid ip in settings
+    let storage = window.localStorage
+    let ip = storage.getItem('synapseIpAddress')
+    if(ip != null){
+      console.log('synapse ip addr found!: ' + ip)
+      this.$connect('ws://' + ip + ':8412/?password=hackme');
+      this.$options.sockets.onopen = () => this.createInitialFilters();
+      // Listen for messages
+      this.$options.sockets.onmessage = (data) => this.parseMessage(JSON.parse(data.data));
+    }
+    else{
+      console.log('IP ADDR NOT FOUND!');
+      this.isSettingsModalActive = true;
+    }
   },
   mounted() {
     this.gridApi = this.gridOptions.api;
@@ -373,7 +384,9 @@ export default {
     async handleTorrentUpload(offer) {
       for (let i = 0; i < this.bufferedTorrents.length; i++) {
         if (this.bufferedTorrents[i].serial === offer.serial) {
-          let response = await fetch('http://10.0.0.130:8412', { //TODO: Load ip from config
+          let storage = window.localStorage
+          let ip = storage.getItem('synapseIpAddress')
+          let response = await fetch('http://' + ip + ':8412', { //TODO: Load ip from config
             method: 'POST',
             headers: {'Authorization': 'Bearer ' + offer.token},
             body: this.bufferedTorrents[i].file
