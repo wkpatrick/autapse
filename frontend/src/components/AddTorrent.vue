@@ -4,9 +4,9 @@
             Add Torrent
         </div>
         <section class="modal-card-body">
-            <b-table :data="uploadedTorrents" :selected.sync="selectedUploadedTorrent">
+            <b-table :data="uploadedTorrents" :selected.sync="selectedUploadedTorrent" style="max-height: 40vh; overflow-y: scroll">
                 <template slot-scope="props">
-                    <b-table-column field="name" label="Name">
+                    <b-table-column field="name" label="Name" >
                         {{props.row.displayName}}
                     </b-table-column>
                 </template>
